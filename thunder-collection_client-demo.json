@@ -1,0 +1,97 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "client-demo",
+    "collectionId": "387c12e8-0ad0-42c5-82e4-1ced1e78df66",
+    "dateExported": "2024-08-27T15:50:37.992Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5a1ae025-d499-4238-8768-4cb132c5549d",
+            "colId": "387c12e8-0ad0-42c5-82e4-1ced1e78df66",
+            "containerId": "",
+            "name": "vectorize",
+            "url": "{{ASTRA_DB_API_ENDPOINT}}/api/json/v1/{{ASTRA_DB_NAMESPACE}}/{ASTRA_DB_VECTORIZE_COLLECTION}",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-08-27T15:50:17.487Z",
+            "modified": "2024-08-27T15:50:17.487Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Token",
+                    "value": "{{ASTRA_DB_APPLICATION_TOKEN}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "ASTRA_DB_VECTORIZE_COLLECTION",
+                    "value": "demo",
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"find\": {\n    \"sort\" : {\"$vectorize\" : \"I'd like some talking shoes\"},\n    \"options\" : {\n        \"limit\" : 2\n    },\n    \"projection\": {\"$vectorize\": 1}\n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "5c514b4c-8498-442b-9ca8-830c52d83f8e",
+            "colId": "387c12e8-0ad0-42c5-82e4-1ced1e78df66",
+            "containerId": "",
+            "name": "findOne",
+            "url": "{{ASTRA_DB_API_ENDPOINT}}/api/json/v1/{{ASTRA_DB_NAMESPACE}}/{ASTRA_DB_VECTORIZE_COLLECTION}",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-08-27T15:50:29.220Z",
+            "modified": "2024-08-27T15:50:29.220Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "Thunder Client (https://www.thunderclient.com)",
+                    "isDisabled": true
+                },
+                {
+                    "name": "Token",
+                    "value": "{{ASTRA_DB_APPLICATION_TOKEN}}"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "ASTRA_DB_VECTORIZE_COLLECTION",
+                    "value": "demo",
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{  \"findOne\": {\r\n    \"filter\": {\"_id\": \"018e65c9-df45-7913-89f8-175f28bd7f74\"},\r\n    \"projection\": {\"$vectorize\": 1}\r\n  }\r\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "VhTiX73LN_nOM8g54fpguQ-U3nrQznWSGzv4G-RwUhrzhauEex5rHQ0jtnbjLJFS_Xnh42tc142mQPtAGKF4_Q"
+}
